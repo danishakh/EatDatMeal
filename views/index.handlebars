@@ -1,0 +1,45 @@
+<div class="container">
+	<!-- <div class="jumbotron">
+	  <h1 class="display-3 text-center">Eat Dat Meal!</h1>
+	  <p class="lead text-center">A simple web-app that allows you to present food to devour. This full-stack application uses the MVC pattern. This application was developed using mysql, express, express-handlebars and a custom-built orm. Enjoy!</p>
+	</div> -->
+
+	<div class="container-appetizers">
+		<div class="panel panel-primary col-sm-6">
+		  <!-- <div class="panel-heading">
+		    <h3 class="panel-title">Available Appetizers</h3>
+		  </div> -->
+		  <div class="panel-body">
+		    <div class="row">
+		    	{{#each appetizers}}
+					{{#unless devoured}}
+					<div class="well well-sm"> 
+						<h5>{{> appetizers/appetizer-block devoured=true}}</h5>
+					{{/unless}}
+					</div>
+				{{/each}}
+		    </div>
+		  </div>
+		</div>
+	</div>
+</div>
+
+
+<h3>Devoured Appetizers</h3>
+
+<ul>
+	{{#each appetizers}}
+		{{#if devoured}}
+			{{> appetizers/appetizer-block devoured=false}}
+		{{/if}}
+	{{/each}}
+</ul>
+
+<h3>Add New Appetizer</h3>
+<form class="form-new-appetizer">
+	<div class="form-group">
+		<label for="appetizer-name">Appetizer: </label>		
+		<input type="text" id="appetizer-name">
+	</div>
+	<button type="submit">Add Appetizer</button>
+</form>
