@@ -1,5 +1,3 @@
-var lastClicked;
-
 $(function() {
 
 	// Appetizer Click Events
@@ -56,8 +54,18 @@ $(function() {
 		});
 	});
 
-	$(".form-new-appetizer").on("submit", (e) => {
+	$("#appetizer-form").on("submit", (e) => {
 		e.preventDefault();
+
+		// Validation Check
+		if ($("#appetizer-name").val().trim() === "") {
+			// console.log('wtf!');
+			$("#appetizer-name").addClass('is-invalid');
+			$("#appetizer-name").val("");
+			$("#appetizer-name").focus();
+			return;
+		}
+
 
 		var newAppetizer = {
 			appetizer_name: $("#appetizer-name").val().trim()
@@ -130,8 +138,17 @@ $(function() {
 		});
 	});
 
-	$(".form-new-entree").on("submit", (e) => {
+	$("#entree-form").on("submit", (e) => {
 		e.preventDefault();
+
+		// Validation Check
+		if ($("#entree-name").val().trim() === "") {
+			// console.log('wtf!');
+			$("#entree-name").addClass('is-invalid');
+			$("#entree-name").val("");
+			$("#entree-name").focus();
+			return;
+		}
 
 		var newEntree = {
 			entree_name: $("#entree-name").val().trim()
@@ -204,8 +221,17 @@ $(function() {
 		});
 	})
 
-	$(".form-new-dessert").on("submit", (e) => {
+	$("#dessert-form").on("submit", (e) => {
 		e.preventDefault();
+
+		// Validation Check
+		if ($("#dessert-name").val().trim() === "") {
+			// console.log('wtf!');
+			$("#dessert-name").addClass('is-invalid');
+			$("#dessert-name").val("");
+			$("#dessert-name").focus();
+			return;
+		}
 
 		var newDessert = {
 			dessert_name: $("#dessert-name").val().trim()
@@ -228,15 +254,15 @@ $(function() {
 
 	// Save last clicked tab to localStorage
 	$("#tab-appetizer").on("click", function() {
-		lastClicked = $(this)["0"].id;
+		var lastClicked = $(this)["0"].id;
 		localStorage.setItem('lastClicked', lastClicked);
 	});
 	$("#tab-entree").on("click", function() {
-		lastClicked = $(this)["0"].id;
+		var lastClicked = $(this)["0"].id;
 		localStorage.setItem('lastClicked', lastClicked);
 	});
 	$("#tab-dessert").on("click", function() {
-		lastClicked = $(this)["0"].id;
+		var lastClicked = $(this)["0"].id;
 		localStorage.setItem('lastClicked', lastClicked);
 	});
 
