@@ -273,28 +273,34 @@ $(function() {
 // Helper function to set the tab to the last clicked tab the user was on
 function checkTabClicked() {
 	if (localStorage.getItem("lastClicked" === "tab-appetizer")) {
-		$("#tab-entree").removeClass('active');
-		$("#container-entrees").removeClass('in active');
-		$("#tab-dessert").removeClass('active');
-		$("#container-desserts").removeClass('in active');
+		// $("#tab-entree").removeClass('active');
+		// $("#container-entrees").removeClass('in active');
+		// $("#tab-dessert").removeClass('active');
+		// $("#container-desserts").removeClass('in active');
+		$("#container-appetizers").siblings().removeClass('in active');
+		$("#tab-appetizer").siblings().removeClass('active');
 
 		$("#tab-appetizer").addClass('active');
 		$("#container-appetizers").addClass('in active');
 	}
 	else if (localStorage.getItem("lastClicked") === "tab-entree") {
-		$("#tab-appetizer").removeClass('active');
-		$("#container-appetizers").removeClass('in active');
-		$("#tab-dessert").removeClass('active');
-		$("#container-desserts").removeClass('in active');
+		// $("#tab-appetizer").removeClass('active');
+		// $("#container-appetizers").removeClass('in active');
+		// $("#tab-dessert").removeClass('active');
+		// $("#container-desserts").removeClass('in active');
+		$("#container-entrees").siblings().removeClass('in active');
+		$("#tab-entree").siblings().removeClass('active');
 
 		$("#tab-entree").addClass('active');
 		$("#container-entrees").addClass('in active');
 	}
 	else if (localStorage.getItem("lastClicked") === "tab-dessert") {
-		$("#tab-appetizer").removeClass('active');
-		$("#container-appetizers").removeClass('in active');
-		$("#tab-entree").removeClass('active');
-		$("#container-entrees").removeClass('in active');
+		// $("#tab-appetizer").removeClass('active');
+		// $("#container-appetizers").removeClass('in active');
+		// $("#tab-entree").removeClass('active');
+		// $("#container-entrees").removeClass('in active');
+		$("#container-desserts").siblings().removeClass('in active');
+		$("#tab-dessert").siblings().removeClass('active');
 
 		$("#tab-dessert").addClass('active');
 		$("#container-desserts").addClass('in active');
