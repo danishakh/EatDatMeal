@@ -1,9 +1,12 @@
 <div class="container">
-	<!-- <div class="jumbotron">
+	<div class="jumbotron">
 	  <h1 class="display-3 text-center">Eat Dat Meal!</h1>
-	  <p class="lead text-center">A simple web-app that allows you to present food to devour. This full-stack application uses the MVC pattern. This application was developed using mysql, express, express-handlebars and a custom-built orm. Enjoy!</p>
-	</div> -->
-	<ul class="nav nav-tabs">
+	  <p class="text-center">A simple web-app that allows you to present food to devour. This full-stack application uses the MVC pattern. This application was developed using mysql, express, express-handlebars and a custom-built orm.</p>
+	  <small><a href="/api/appetizers">Appetizers API</a>  |  </small> 
+	  <small><a href="/api/entrees">Entrees API  </a>  |  </small>  
+	  <small><a href="/api/desserts">Desserts API</a></small>
+	</div>
+	<ul class="nav nav-tabs nav-fill">
 		<li id="tab-appetizer" class="active"><a data-toggle="tab" href="#container-appetizers">Appetizers</a></li>
 		<li id="tab-entree"><a data-toggle="tab" href="#container-entrees">Entrees</a></li>
 		<li id="tab-dessert"><a data-toggle="tab" href="#container-desserts">Desserts</a></li>
@@ -12,12 +15,12 @@
 	<div class="tab-content">
 
 		<!-- Appetizers -->
-		<div id="container-appetizers" class="tab-pane fade in active col-md-12">
+		<div id="container-appetizers" class="tab-pane fade in active">
 
 			<div class="panel panel-primary container-appetizers">
-				<div class="panel-heading">
+				<!-- <div class="panel-heading">
 					<h1 class="panel-title text-center"> Appetizers </h1>
-				</div>
+				</div> -->
 
 				<div class="col-md-10 col-md-offset-1">
 					<form class="form-new-appetizer">
@@ -70,12 +73,11 @@
 		</div>
 		
 		<!-- Entrees -->
-		<div id="container-entrees" class="tab-pane fade">
-			
+		<div id="container-entrees" class="tab-pane fade">	
 			<div class="panel panel-primary container-entrees">
-				<div class="panel-heading">
+				<!-- <div class="panel-heading">
 					<h1 class="panel-title text-center"> Entrees </h1>
-				</div>
+				</div> -->
 
 				<div class="col-md-10 col-md-offset-1">
 					<form class="form-new-entree">
@@ -130,9 +132,9 @@
 		<!-- Desserts -->
 		<div id="container-desserts" class="tab-pane fade">
 			<div class="panel panel-primary container-desserts">
-				<div class="panel-heading">
+				<!-- <div class="panel-heading">
 					<h1 class="panel-title text-center"> Desserts </h1>
-				</div>
+				</div> -->
 
 				<div class="col-md-10 col-md-offset-1">
 					<form class="form-new-dessert">
