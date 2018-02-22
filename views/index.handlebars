@@ -62,8 +62,8 @@
 						    
 						    	{{#each appetizers}}
 									{{#if devoured}}
-										{{> appetizers/appetizer-block devoured=false}}
-									{{/if}}
+										{{> appetizers/appetizer-devoured-block devoured=false}}
+									{{/if}} 
 								{{/each}}
 						    
 						  </div>
@@ -119,7 +119,7 @@
 						    
 						    	{{#each entrees}}
 									{{#if devoured}}
-										{{> entrees/entree-block devoured=false}}
+										{{> entrees/entree-devoured-block devoured=false}}
 									{{/if}}
 								{{/each}}
 						    
@@ -176,7 +176,7 @@
 						    
 						    	{{#each desserts}}
 									{{#if devoured}}
-										{{> desserts/dessert-block devoured=false}}
+										{{> desserts/dessert-devoured-block devoured=false}}
 									{{/if}}
 								{{/each}}
 						  </div>
