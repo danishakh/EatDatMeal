@@ -3,43 +3,191 @@
 	  <h1 class="display-3 text-center">Eat Dat Meal!</h1>
 	  <p class="lead text-center">A simple web-app that allows you to present food to devour. This full-stack application uses the MVC pattern. This application was developed using mysql, express, express-handlebars and a custom-built orm. Enjoy!</p>
 	</div> -->
+	<ul class="nav nav-tabs">
+		<li id="tab-appetizer" class="active"><a data-toggle="tab" href="#container-appetizers">Appetizers</a></li>
+		<li id="tab-entree"><a data-toggle="tab" href="#container-entrees">Entrees</a></li>
+		<li id="tab-dessert"><a data-toggle="tab" href="#container-desserts">Desserts</a></li>
+	</ul>
 
-	<div class="container-appetizers">
-		<div class="panel panel-primary col-sm-6">
-		  <!-- <div class="panel-heading">
-		    <h3 class="panel-title">Available Appetizers</h3>
-		  </div> -->
-		  <div class="panel-body">
-		    <div class="row">
-		    	{{#each appetizers}}
-					{{#unless devoured}}
-					<div class="well well-sm"> 
-						<h5>{{> appetizers/appetizer-block devoured=true}}</h5>
-					{{/unless}}
+	<div class="tab-content">
+
+		<!-- Appetizers -->
+		<div id="container-appetizers" class="tab-pane fade in active col-md-12">
+
+			<div class="panel panel-primary container-appetizers">
+				<div class="panel-heading">
+					<h1 class="panel-title text-center"> Appetizers </h1>
+				</div>
+
+				<div class="col-md-10 col-md-offset-1">
+					<form class="form-new-appetizer">
+						<br>
+						<div class="form-group">	
+							<input type="text" class="form-control" id="appetizer-name" aria-describedby="appetizer_name_help">
+							<small id="appetizer_name_help" class="form-text text-muted">Please enter an appetizer to devour</small>
+						</div>
+						<button class="btn btn-success btn-submit" type="submit">Add Appetizer</button>
+					</form>
+					<br>
+				</div>
+				
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="panel panel-primary panel-available-appetizers">
+						  <div class="panel-heading">
+						    <h3 class="panel-title">Available</h3>
+						  </div>
+						  <div class="panel-body">
+						    
+						    	{{#each appetizers}}
+									{{#unless devoured}}
+										{{> appetizers/appetizer-block devoured=true}}
+									{{/unless}}
+								{{/each}}
+						    
+						  </div>
+						</div>
 					</div>
-				{{/each}}
-		    </div>
-		  </div>
+					
+					<div class="col-sm-6">
+						<div class="panel panel-primary panel-devoured-appetizers">
+						  <div class="panel-heading">
+						    <h3 class="panel-title">Devoured</h3>
+						  </div>
+						  <div class="panel-body">
+						    
+						    	{{#each appetizers}}
+									{{#if devoured}}
+										{{> appetizers/appetizer-block devoured=false}}
+									{{/if}}
+								{{/each}}
+						    
+						  </div>
+						</div>
+					</div>
+				</div>	
+			</div>
 		</div>
+		
+		<!-- Entrees -->
+		<div id="container-entrees" class="tab-pane fade">
+			
+			<div class="panel panel-primary container-entrees">
+				<div class="panel-heading">
+					<h1 class="panel-title text-center"> Entrees </h1>
+				</div>
+
+				<div class="col-md-10 col-md-offset-1">
+					<form class="form-new-entree">
+						<br>
+						<div class="form-group">	
+							<input type="text" class="form-control" id="entree-name" aria-describedby="entree_name_help">
+							<small id="entree_name_help" class="form-text text-muted">Please enter an entree to devour</small>
+						</div>
+						<button class="btn btn-success btn-submit" type="submit">Add Entree</button>
+					</form>
+					<br>
+				</div>
+				
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="panel panel-primary panel-available-entrees">
+						  <div class="panel-heading">
+						    <h3 class="panel-title">Available</h3>
+						  </div>
+						  <div class="panel-body">
+						    
+						    	{{#each entrees}}
+									{{#unless devoured}}
+										{{> entrees/entree-block devoured=true}}
+									{{/unless}}
+								{{/each}}
+						    
+						  </div>
+						</div>
+					</div>
+					
+					<div class="col-sm-6">
+						<div class="panel panel-primary panel-devoured-entrees">
+						  <div class="panel-heading">
+						    <h3 class="panel-title">Devoured</h3>
+						  </div>
+						  <div class="panel-body">
+						    
+						    	{{#each entrees}}
+									{{#if devoured}}
+										{{> entrees/entree-block devoured=false}}
+									{{/if}}
+								{{/each}}
+						    
+						  </div>
+						</div>
+					</div>
+				</div>	
+			</div>
+		</div>
+
+		<!-- Desserts -->
+		<div id="container-desserts" class="tab-pane fade">
+			<div class="panel panel-primary container-desserts">
+				<div class="panel-heading">
+					<h1 class="panel-title text-center"> Desserts </h1>
+				</div>
+
+				<div class="col-md-10 col-md-offset-1">
+					<form class="form-new-dessert">
+						<br>
+						<div class="form-group">	
+							<input type="text" class="form-control" id="dessert-name" aria-describedby="dessert_name_help">
+							<small id="dessert_name_help" class="form-text text-muted">Please enter a dessert to devour</small>
+						</div>
+						<button class="btn btn-success btn-submit" type="submit">Add Dessert</button>
+					</form>
+					<br>
+				</div>
+				
+				<div class="row">
+					<div class="col-sm-6">
+						<div class="panel panel-primary panel-available-desserts">
+						  <div class="panel-heading">
+						    <h3 class="panel-title">Available</h3>
+						  </div>
+						  <div class="panel-body">
+						    
+						    	{{#each desserts}}
+									{{#unless devoured}}
+										{{> desserts/dessert-block devoured=true}}
+									{{/unless}}
+								{{/each}}
+						    
+						  </div>
+						</div>
+					</div>
+					
+					<div class="col-sm-6">
+						<div class="panel panel-primary panel-devoured-desserts">
+						  <div class="panel-heading">
+						    <h3 class="panel-title">Devoured</h3>
+						  </div>
+						  <div class="panel-body">
+						    
+						    	{{#each desserts}}
+									{{#if devoured}}
+										{{> desserts/dessert-block devoured=false}}
+									{{/if}}
+								{{/each}}
+						  </div>
+						</div>
+					</div>
+				</div>	
+			</div>
+		</div>	
+
+
 	</div>
+	
+
+	
+
+	
 </div>
-
-
-<h3>Devoured Appetizers</h3>
-
-<ul>
-	{{#each appetizers}}
-		{{#if devoured}}
-			{{> appetizers/appetizer-block devoured=false}}
-		{{/if}}
-	{{/each}}
-</ul>
-
-<h3>Add New Appetizer</h3>
-<form class="form-new-appetizer">
-	<div class="form-group">
-		<label for="appetizer-name">Appetizer: </label>		
-		<input type="text" id="appetizer-name">
-	</div>
-	<button type="submit">Add Appetizer</button>
-</form>

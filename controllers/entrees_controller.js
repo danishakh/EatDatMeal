@@ -1,30 +1,29 @@
 var express = require('express');
-var appetizer = require('../models/appetizer.js');
+var entree = require('../models/entree.js');
 
 var router = express.Router();
 
-
-router.route('/api/appetizers')
-	// GET all appetizers in JSON
+router.route('/api/entrees')
+	// GET all entrees in JSON
 	.get((req, res) => {
-		appetizer.all((data) => {
+		entree.all((data) => {
 			res.status(200).json(data);
 		});
 	})
-	// POST appetizer to DB
+	// POST entree to DB
 	.post((req, res) => {
-		appetizer.create({appetizer_name: req.body.appetizer_name}, (result) => {
+		entree.create({entree_name: req.body.entree_name}, (result) => {
 			res.json({ id: result.insertId });
 		});
 	});
 
-// Edit/Update Existing Appetizer
-router.route('/api/appetizers/:id')
+// Edit/Update existing entree
+router.route('/api/entrees/:id')
 	.put((req, res) => {
 		var condition = "id = " + req.params.id;
 		console.log("Condition: ", condition);
 
-		appetizer.update({devoured: req.body.devoured}, condition, (result) => {
+		entree.update({devoured: req.body.devoured}, condition, (result) => {
 			if (result.changedRows === 0) {
 				return res.status(404).end();
 			}
@@ -35,7 +34,7 @@ router.route('/api/appetizers/:id')
 		var condition = "id = " + req.params.id;
 		
 		console.log("Condition: ", condition);
-		appetizer.delete(condition, (result) => {
+		entree.delete(condition, (result) => {
 			res.status(200).end();
 		});
 	});

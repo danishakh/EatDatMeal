@@ -1,16 +1,16 @@
 
 <div class="row">
 	<div class="well well-sm">
-		{{appetizer_name}}
+		{{entree_name}}
 
 		<div class="btn-group btn-group-1" role="group">
 			<div class="btn-group" role="group">
-				<button class="change-devoured-status btn btn-devour-appetizer btn-primary btn-sm btn-group" data-id="{{id}}" data-newdevoured="{{devoured}}">
+				<button class="change-devoured-status btn btn-devour-entree btn-primary btn-sm btn-group" data-id="{{id}}" data-newdevoured="{{devoured}}">
 					{{#if devoured}} Devour it! {{else}} Excrete it! {{/if}}
 				<span class="glyphicon glyphicon-cutlery" aria-hidden="true"></span></button>
 			</div>
 			<div class="btn-group" role="group">
-				<button class="btn btn-delete-appetizer btn-sm btn-danger" data-id="{{id}}"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button>
+				<button class="btn btn-delete-entree btn-sm btn-danger" data-id="{{id}}"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></button>
 			</div>
 		</div>
 	</div>

@@ -18,12 +18,19 @@ app.use(bodyParser.json());
 // Set Handlebars.
 var exphbs = require("express-handlebars");
 
+// Use Handlebars as the default view engine
 app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 
+var homeRoute = require("./controllers/home_controller.js");
 var appetizerRoutes = require("./controllers/appetizers_controller.js");
+var entreeRoutes = require("./controllers/entrees_controller.js");
+var dessertRoutes = require("./controllers/desserts_controller.js");
 
-app.use(appetizerRoutes)
+app.use(homeRoute);
+app.use(appetizerRoutes);
+app.use(entreeRoutes);
+app.use(dessertRoutes);
 
 app.listen(PORT, () => {
 	console.log("App now listening at localhost:" + PORT);

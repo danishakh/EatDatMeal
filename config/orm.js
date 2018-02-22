@@ -67,7 +67,7 @@ var orm = {
     queryString += " WHERE ";
     queryString += condition;
 
-    console.log(queryString);
+    //console.log(queryString);
     connection.query(queryString, function(err, result) {
       if (err) {
         throw err;
@@ -78,6 +78,8 @@ var orm = {
   },
   deleteOne: (table, condition, cb) => {
     var queryString = "DELETE FROM ?? WHERE " + condition + ";";
+
+    //console.log(queryString);
     connection.query(queryString, [table], (err, result) => {
       if (err) {
         throw err;
